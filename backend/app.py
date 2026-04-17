@@ -15,12 +15,19 @@ MODEL_PATH = os.path.join(BASE_DIR, 'scoliosis_model.pt')
 DISPLAY_WIDTH = 800
 
 app = FastAPI(title='Scoliosis AI Backend', version='1.0.0')
+
+origins = [
+    "http://localhost:5173",
+    "https://scoliosis-combined-app.vercel.app",
+    "https://scoliosis-combined-hpbavr5po-petchykmns-projects.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
-    allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
+    allow_origins=origins,
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 _model: Optional[YOLO] = None
