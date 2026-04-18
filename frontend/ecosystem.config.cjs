@@ -1,10 +1,11 @@
 module.exports = {
   apps: [
     {
-      name: 'frontend',
-      script: 'npx',
-      args: 'serve -s dist --listen tcp://0.0.0.0:5173',
-      interpreter: 'none',
+      name: 'scoliosis-AI-analyzer',
+      script: 'server.cjs',
+      env: {
+        PORT: 5173,
+      },
     },
   ],
 }
