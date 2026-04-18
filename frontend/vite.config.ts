@@ -16,6 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
+  base: '/scoliosis/'
   plugins: [figmaAssetResolver(), react(), tailwindcss()],
   resolve: {
     alias: {

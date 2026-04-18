@@ -18,4 +18,4 @@ export const router = createBrowserRouter([
       { path: "analysis", Component: Analysis },
     ],
   },
-]);
+], {basename: '/scoliosis'});
